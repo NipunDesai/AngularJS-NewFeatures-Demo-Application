@@ -1,0 +1,44 @@
+﻿<div ng-controller="angularDemoController">
+    <div ng-repeat="data in ::dataCollectionList">
+        {{::data.name}}
+        {{::data.procesor}}
+        {{::data.age}}
+
+    </div>
+    <div>
+        <input type="text" class="form-control"
+               ng-model="name"
+               ng-model-options="{ updateOn: 'blur' }">
+
+        <p> {{name}}</p>
+    </div>
+    <div>
+        <input type="text" class="form-control" ng-model="name1" ng-model-options="{ debounce: 1000 }" />
+        <p> {{name1}}</p>
+
+    </div>
+    <div class="gridStyle" ng-grid="gridOptions"></div>
+<div class="form-group">
+    <label class="control-label" >Number</label>
+    <!--<div>
+        <input ng-model="numbers" class="immediate-help" demo-directive="numbers" required type="text" placeholder="text">
+    </div>-->
+    
+    
+
+
+</div>
+    </div>
+
+<form name = "myForm" >
+
+<div>
+    <input name="myNumber" type="text" ng-model="data.number" demo-directive required /> >
+    <div ng-if="myForm.myNumber.$error.required">
+        You did not enter a text
+    </div>
+    <div ng-if="myForm.myNumber.$error.numeric">
+        Your text must contain a numeric
+    </div>
+    </div>
+    </form>
